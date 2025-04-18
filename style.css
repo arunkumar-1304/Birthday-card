@@ -1,5 +1,4 @@
-/* Reset global styles */
-* {
+ {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -9,6 +8,10 @@
 /* Background for the body */
 body {
   background-color: #fdbf00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 /* Container for card and image */
@@ -16,8 +19,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  flex-wrap: wrap; /* In case the screen is small */
+  height: 100%;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 /* Image Section Styling */
@@ -42,9 +46,10 @@ body {
   margin: auto;
   transition: 1s;
   flex: 2;
+  display: flex;
+  flex-direction: row;
 }
 
-/* Card hover effects */
 .card:hover {
   transform: rotate(-5deg);
 }
@@ -61,23 +66,48 @@ body {
   left: 50%;
 }
 
+/* Inside section for text and image */
 .inside {
   background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
   line-height: 3;
   padding: 0 20px;
   text-align: center;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
 }
 
-.outside {
-  transform-style: preserve-3d;
-  z-index: 1;
-  transform-origin: left;
-  transition: 2s;
-  cursor: pointer;
+/* Left Inside Image Styling */
+.left-inside {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.left-inside img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Inside Text Styling */
+.right-inside {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-inside h1 {
+  font-size: 100px;
+  line-height: 100px;
 }
 
 /* Front and back of the card */
